@@ -13,6 +13,7 @@ To write a python program for creating Chat using TCP Sockets Links.
 ## PROGRAM:
 
 server.py:
+~~~
 import socket 
 s=socket.socket() 
 s.bind(('localhost',8000)) 
@@ -23,8 +24,9 @@ while True:
             print("Client > ",ClientMessage) 
             msg=input("Server > ") 
             c.send(msg.encode())
-
+~~~
 client.py:
+~~~
 import socket 
 s=socket.socket() 
 s.connect(('localhost',8000)) 
@@ -32,7 +34,7 @@ while True:
     msg=input("Client > ") 
     s.send(msg.encode()) 
     print("Server > ",s.recv(1024).decode())
-
+~~~
 
 ## OUPUT:
 
